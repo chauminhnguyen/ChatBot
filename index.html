@@ -24,10 +24,10 @@
 
 
         <div class="chat-popup" id="myForm">
-            <form id="chatbox">
+            <form id="chatbox" onSubmit="return false;">
+                <h1>Chat</h1>
                 <div class="mb-3" id="chat-area">
-                    <h1>Chat</h1>
-
+                    
                     <div v-for="(input, index) in inputs">
 
                         <div v-if="index % 2 === 0">
@@ -47,14 +47,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
+                    </div>    
                 </div>
             
                 <div class="mb-3">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Say Something..." aria-describedby="button-addon2" v-model="text">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2" v-on:click="addInputs">Button</button>
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2" v-on:keyup.enter="addInputs" v-on:click="addInputs">Button</button>
                     </div>
                 </div>
             </form>

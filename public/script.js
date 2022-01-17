@@ -41,10 +41,10 @@ var vue = new Vue({
   
   methods: {
     async addInputs() {
-      const history_ref = doc(db, "user/history");
-      await updateDoc(history_ref, {
-        history: arrayUnion(this.text)
-      });
+      // const history_ref = doc(db, "user/history");
+      // await updateDoc(history_ref, {
+      //   history: arrayUnion(this.text)
+      // });
       this.inputs.push(this.text)
 
       const rawResponse = await fetch('http://127.0.0.1:5000/chatbot', 
@@ -62,7 +62,7 @@ var vue = new Vue({
       this.response = await rawResponse.json();
 
       this.inputs.push(this.response.data['bot']);
-      setInterval(updateScroll,100)
+      // setInterval(updateScroll,100)
     },
 
     async clickBtn() {
