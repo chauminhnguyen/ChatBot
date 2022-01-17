@@ -18,7 +18,6 @@ class ChatBot(Resource):
         
         args = parser.parse_args()  # parse arguments to dictionary
         
-        # create new dataframe containing new values
         new_data = {
             'user': args['user'],
             'bot': generate_conv(args['user'])
