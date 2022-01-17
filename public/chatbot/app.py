@@ -1,10 +1,13 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
-import ast
+from flask_cors import CORS, cross_origin
 from main import generate_conv
 
 app = Flask(__name__)
 api = Api(app)
+
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 class ChatBot(Resource):
     # methods go here

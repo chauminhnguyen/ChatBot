@@ -2,7 +2,6 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 import firebase_admin
 from firebase_admin import credentials, firestore
-import json
 
 # Initialize FireStore
 cred_obj = credentials.Certificate('./my-project.json')

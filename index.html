@@ -29,19 +29,22 @@
                     <h1>Chat</h1>
 
                     <div v-for="(input, index) in inputs">
-                        <!-- Human Chat Begin -->
-                        <div class="d-flex justify-content-end mb-4">
-                            <div class="msg_cotainer_send">
-                                {{ inputs[index] }}
-                            </div>
-                            <span class="msg_time">8:55 AM</span>
-                        </div>
 
-                        <!-- Robot Chat Begin -->
-                        <div class="d-flex justify-content-start mb-4">
-                            <span class="msg_time">8:40 AM</span>
-                            <div class="msg_cotainer">
-                                Hi, how are you samim?
+                        <div v-if="index % 2 === 0">
+                            <!-- Human Chat Begin -->
+                            <div class="d-flex justify-content-end mb-4">
+                                <div class="msg_cotainer_send">
+                                    {{ inputs[index] }}
+                                </div>
+                                <span class="msg_time">8:55 AM</span>
+                            </div>
+
+                            <!-- Robot Chat Begin -->
+                            <div class="d-flex justify-content-start mb-4">
+                                <span class="msg_time">8:40 AM</span>
+                                <div class="msg_cotainer">
+                                    {{ inputs[index+1] }}
+                                </div>
                             </div>
                         </div>
                     </div>

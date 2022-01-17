@@ -35,7 +35,8 @@ var vue = new Vue({
   data: {
     name_: 'user',
     inputs: [],
-    text: ""
+    text: "",
+    response: ""
   },
   
   methods: {
@@ -45,6 +46,22 @@ var vue = new Vue({
         history: arrayUnion(this.text)
       });
       this.inputs.push(this.text)
+
+      const rawResponse = await fetch('http://127.0.0.1:5000/chatbot', 
+      {
+        method: 'POST',
+        // mode: 'no-cors',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          user: this.text
+        })
+      });
+      this.response = await rawResponse.json();
+
+      this.inputs.push(this.response.data['bot']);
       setInterval(updateScroll,100)
     },
 
