@@ -36,7 +36,8 @@ var vue = new Vue({
     name_: 'user',
     inputs: [],
     text: "",
-    response: ""
+    response: "",
+    timestamp: ''
   },
   
   methods: {
@@ -70,7 +71,13 @@ var vue = new Vue({
       await updateDoc(name_ref, {
         name : this.name_
       });
-    }
+    },
+
+    getNow() {
+      const today = new Date();
+      const time = today.getHours() + " : " + today.getMinutes();
+      this.timestamp = time;
+    },
   },
 
   async created() {
@@ -78,6 +85,10 @@ var vue = new Vue({
     querySnapshot.forEach((doc) => {
       this.name_ = doc.data()['name'];
     });
+
+    setInterval(() => {
+      this.getNow();
+    }, 1000)
   }
 });
 
