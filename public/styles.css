@@ -1,0 +1,31 @@
+.msg_cotainer{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    border-radius: 25px;
+    background-color: rgb(255, 192, 0);
+    padding: 10px;
+    position: relative;
+}
+
+.msg_cotainer_send{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+    border-radius: 25px;
+    background-color: #78e08f;
+    padding: 10px;
+    position: relative;
+}
+
+.msg_time {
+    margin: 0;
+    top: 50%;
+    -ms-transform: translateY(25%);
+    transform: translateY(25%);
+}
+
+#chat-area {
+    max-height: 500px;
+    overflow-y: scroll;
+}

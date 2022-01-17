@@ -4,14 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <title>Document</title>
 </head>
 <body>
-    <script type="module" src="./script.js"></script>
+    <script type="module" src="./public/script.js"></script>
+    <link rel="stylesheet" href="./public/styles.css">
+    
     <div id="wel">
         <h1>Welcome {{ name_ }}</h1>
         <input type="text" v-model='name_'>
-        <button v-on:click="clickBtn">Click</button>
+        <!-- <button v-on:click="clickBtn">Click</button> -->
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary" v-on:click="clickBtn">Click</button>
+        </div>
+
+
+        <div class="chat-popup" id="myForm">
+            <form id="chatbox">
+                <div class="mb-3" id="chat-area">
+                    <h1>Chat</h1>
+
+                    <div v-for="(input, index) in inputs">
+                        <!-- Human Chat Begin -->
+                        <div class="d-flex justify-content-end mb-4">
+                            <div class="msg_cotainer_send">
+                                {{ inputs[index] }}
+                            </div>
+                            <span class="msg_time">8:55 AM</span>
+                        </div>
+
+                        <!-- Robot Chat Begin -->
+                        <div class="d-flex justify-content-start mb-4">
+                            <span class="msg_time">8:40 AM</span>
+                            <div class="msg_cotainer">
+                                Hi, how are you samim?
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            
+                <div class="mb-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Say Something..." aria-describedby="button-addon2" v-model="text">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2" v-on:click="addInputs">Button</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
     </div>
 
 </body>
