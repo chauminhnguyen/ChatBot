@@ -29,12 +29,11 @@
                 <div class="mb-3" id="chat-area">
                     
                     <div v-for="(input, index) in inputs">
-
                         <div v-if="index % 2 === 0">
                             <!-- Human Chat Begin -->
                             <div class="d-flex justify-content-end mb-4">
                                 <div class="msg_cotainer_send">
-                                    {{ inputs[index] }}
+                                    {{ inputs[index]['user'] }}
                                 </div>
                                 <span class="msg_time">{{ timestamp }}</span>
                             </div>
@@ -43,7 +42,7 @@
                             <div class="d-flex justify-content-start mb-4">
                                 <span class="msg_time">{{ timestamp }}</span>
                                 <div class="msg_cotainer">
-                                    {{ inputs[index+1] }}
+                                    {{ inputs[index]['bot'] }}
                                 </div>
                             </div>
                         </div>
