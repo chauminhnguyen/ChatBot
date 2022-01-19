@@ -16,8 +16,8 @@ The conversation will be stored in Firebase each chat. After the user click the 
 
 ### Install all requirements
 
-`pip install -r ./public/chatbot/requirements.txt'
+`pip install -r ./public/chatbot/requirements.txt`
 
 ### Run the API
 
-`python ./public/chatbot/app.py'
+`python ./public/chatbot/app.py`
