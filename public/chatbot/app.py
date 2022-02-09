@@ -10,9 +10,8 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 class ChatBot(Resource):
-    # methods go here
-    def get(self):
-        return {'data': "hehe"}, 200  # return data and 200 OK code
+    # def get(self):
+    #     return {'data': "hehe"}, 200  # return data and 200 OK code
 
     def post(self):
         parser = reqparse.RequestParser()  # initialize
@@ -29,7 +28,7 @@ class ChatBot(Resource):
         return {'data': new_data}, 200  # return data with 200 OK
 
 
-api.add_resource(ChatBot, '/chatbot')  # '/users' is our entry point
+api.add_resource(ChatBot, '/chatbot')
 
 if __name__ == '__main__':
     app.run()  # run our Flask app
